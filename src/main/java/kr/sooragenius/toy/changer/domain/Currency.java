@@ -1,20 +1,18 @@
 package kr.sooragenius.toy.changer.domain;
 
+import kr.sooragenius.toy.changer.enums.CurrencyType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor
 @Getter
 public class Currency {
-    private String source;
-    private String fromTo;
+    private CurrencyType from;
+    private CurrencyType to;
     private double rate;
 
-
-    public String getFrom() {
-        return source;
-    }
-    public String getTo() {
-        return fromTo.replace(source, "");
+    public Currency(String source, String fromTo, double rate) {
+        this.from = CurrencyType.valueOf(source);
+        this.to = CurrencyType.valueOf(fromTo.replace(source, ""));
+        this.rate = rate;
     }
 }

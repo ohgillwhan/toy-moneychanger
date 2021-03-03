@@ -2,6 +2,7 @@ package kr.sooragenius.toy.changer.service;
 
 import com.google.gson.Gson;
 import kr.sooragenius.toy.changer.domain.Currency;
+import kr.sooragenius.toy.changer.enums.CurrencyType;
 import kr.sooragenius.toy.changer.exception.APIFailureException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,8 +28,8 @@ public class CurrencyAPIServiceTest {
         Currency aed = currencies.get(0);
         Currency afn = currencies.get(1);
 
-        assertCurrency(aed, "USD", "AED", 3.673198);
-        assertCurrency(afn, "USD", "AFN", 78.432676);
+        assertCurrency(aed, CurrencyType.USD, CurrencyType.AED, 3.673198);
+        assertCurrency(afn, CurrencyType.USD, CurrencyType.AFN, 78.432676);
     }
 
     @DisplayName("성공하지 못한 Json이면은 Exception이 발생해야 한다.")
@@ -41,7 +42,7 @@ public class CurrencyAPIServiceTest {
     }
 
 
-    private void assertCurrency(Currency currency, String exceptFrom, String exceptTo, double exceptRate) {
+    private void assertCurrency(Currency currency, CurrencyType exceptFrom, CurrencyType exceptTo, double exceptRate) {
         assertThat(currency.getFrom()).isEqualTo(exceptFrom);
         assertThat(currency.getTo()).isEqualTo(exceptTo);
         assertThat(currency.getRate()).isEqualTo(exceptRate);
