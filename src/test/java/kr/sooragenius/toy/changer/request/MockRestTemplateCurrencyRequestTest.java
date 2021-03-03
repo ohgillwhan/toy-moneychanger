@@ -5,9 +5,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.client.RestTemplate;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,6 +25,8 @@ import static org.mockito.BDDMockito.given;
 )
 public class MockRestTemplateCurrencyRequestTest {
     @MockBean
+    private RestTemplateBuilder restTemplateBuilder;
+    @MockBean
     private RestTemplate restTemplate;
 
     @Autowired
@@ -35,6 +39,8 @@ public class MockRestTemplateCurrencyRequestTest {
         final String body = "HELLO, WORLD!";
         given(restTemplate.exchange(anyString(), any(), any(), (Class)any()))
                 .willReturn(ResponseEntity.ok(body));
+
+        ReflectionTestUtils.setField(restTemplateCurrencyRequest, "restTemplate", restTemplate);
 
         // when
         String result = restTemplateCurrencyRequest.request();
