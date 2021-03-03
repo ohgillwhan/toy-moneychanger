@@ -6,3 +6,6 @@
     - [X] Currency는 From(Source) / To 를 나눠서 가져와야 한다.
     - [X] From, To는 Enum 이여야 한다. ( https://currencylayer.com/site_downloads/cl-currencies-select-option.txt )
     - [X] success값이 false이면 Exception이 발생해야 한다.
+- [ ] API 요청하는 구현체는 RestTemplate으로 구현을 한다.
+    - [ ] API의 access_token 은 환경변수로 설정한다.
+    - [ ] status가 200이 아닐경우 Exception을 발생시킨다.
