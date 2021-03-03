@@ -1,18 +1,31 @@
 package kr.sooragenius.toy.changer.request;
 
+import kr.sooragenius.toy.changer.exception.APIFailureException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.RequestEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-@RequiredArgsConstructor
 public class RestTemplateCurrencyRequest implements CurrencyRequest{
     private final RestTemplate restTemplate;
 
+    @Value("${currency.api.endpoint}")
+    private String apiEndpoint;
+
+    public RestTemplateCurrencyRequest(RestTemplateBuilder restTemplateBuilder) {
+        restTemplate = restTemplateBuilder.build();
+    }
+
     @Override
     public String request() {
-        return restTemplate.exchange("", HttpMethod.GET, null, String.class).getBody();
+        ResponseEntity<String> exchange = restTemplate.exchange(apiEndpoint, HttpMethod.GET, null, String.class);
+        if(!exchange.getStatusCode().is2xxSuccessful()) throw new APIFailureException();
+
+        return exchange.getBody();
     }
 }
