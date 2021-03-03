@@ -5,3 +5,4 @@
     - [X] Currency는 금액 비율을 갖고 있어야 한다. ( double )
     - [X] Currency는 From(Source) / To 를 나눠서 가져와야 한다.
     - [ ] From, To는 Enum 이여야 한다. ( https://currencylayer.com/site_downloads/cl-currencies-select-option.txt )
+    - [ ] success값이 false이면 Exception이 발생해야 한다.
