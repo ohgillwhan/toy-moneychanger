@@ -15,7 +15,7 @@ public class CurrencyAPIService {
     private final CurrencyRequest currencyRequest;
     private final Gson gson;
 
-    public List<Currency> parseFromAPI() {
+    public List<Currency> getCurrenciesListFromAPI() {
         String payload = currencyRequest.request();
 
         CurrencyResponse currencyResponse = gson.fromJson(payload, CurrencyResponse.class);

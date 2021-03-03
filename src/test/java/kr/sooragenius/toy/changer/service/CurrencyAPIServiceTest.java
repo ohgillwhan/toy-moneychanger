@@ -22,7 +22,7 @@ public class CurrencyAPIServiceTest {
         // given
         CurrencyAPIService currencyAPIService = new CurrencyAPIService(() -> CurrencyAPIServiceTest.SUCCESS_JSON, new Gson());
         // when
-        List<Currency> currencies = currencyAPIService.parseFromAPI();
+        List<Currency> currencies = currencyAPIService.getCurrenciesListFromAPI();
 
         // then
         Currency aed = currencies.get(0);
@@ -38,7 +38,7 @@ public class CurrencyAPIServiceTest {
         CurrencyAPIService currencyAPIService = new CurrencyAPIService(() -> CurrencyAPIServiceTest.NOT_SUCCESS_JSON, new Gson());
 
         assertThatExceptionOfType(APIFailureException.class)
-                .isThrownBy(() -> currencyAPIService.parseFromAPI());
+                .isThrownBy(() -> currencyAPIService.getCurrenciesListFromAPI());
     }
 
 
