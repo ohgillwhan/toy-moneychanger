@@ -22,7 +22,7 @@ public class CurrencyAPIServiceTest {
     @Test
     void 정상적인_json이면은_정상적인_CurrencyResponse가_리턴되어야_한다() {
         // given
-        CurrencyAPIService currencyAPIService = new CurrencyAPIService(() -> CurrencyAPIServiceTest.SUCCESS_JSON, new Gson());
+        CurrencyAPIService currencyAPIService = new CurrencyAPIService(() -> CurrencyAPIServiceTest.SUCCESS_JSON);
         // when
         List<Currency> currencies = currencyAPIService.getCurrenciesListFromAPI();
 
@@ -37,7 +37,7 @@ public class CurrencyAPIServiceTest {
     @DisplayName("성공하지 못한 Json이면은 Exception이 발생해야 한다.")
     @Test
     void 성공하지_못한_Json이면은_Exception이_발생해야_한다() {
-        CurrencyAPIService currencyAPIService = new CurrencyAPIService(() -> CurrencyAPIServiceTest.NOT_SUCCESS_JSON, new Gson());
+        CurrencyAPIService currencyAPIService = new CurrencyAPIService(() -> CurrencyAPIServiceTest.NOT_SUCCESS_JSON);
 
         assertThatExceptionOfType(APIFailureException.class)
                 .isThrownBy(() -> currencyAPIService.getCurrenciesListFromAPI());

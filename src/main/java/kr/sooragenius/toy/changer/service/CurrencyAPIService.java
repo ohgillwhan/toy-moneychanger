@@ -6,14 +6,16 @@ import kr.sooragenius.toy.changer.dto.CurrencyAPIDTO;
 import kr.sooragenius.toy.changer.exception.APIFailureException;
 import kr.sooragenius.toy.changer.request.CurrencyRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
+@Component
 public class CurrencyAPIService {
     private final CurrencyRequest currencyRequest;
-    private final Gson gson;
+    private final Gson gson = new Gson();
 
     public List<Currency> getCurrenciesListFromAPI() {
         String payload = currencyRequest.request();

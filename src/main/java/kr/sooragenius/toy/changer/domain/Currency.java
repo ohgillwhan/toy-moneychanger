@@ -14,7 +14,7 @@ public class Currency {
         Assert.notNull(source, "source는 notNull 여야 합니다.");
         Assert.notNull(fromTo, "fromTo는 notNull 여야 합니다.");
         this.from = CurrencyType.valueOf(source);
-        this.to = CurrencyType.valueOf(fromTo.replace(source, ""));
+        this.to = CurrencyType.valueOf(fromTo.substring(source.length()));
         this.rate = rate;
     }
 }

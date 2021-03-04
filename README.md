@@ -10,3 +10,5 @@
     - [X] 정상적으로 처리가 되면은 body를 return 해야 한다.
     - [X] API의 access_token 은 환경변수로 설정한다.
     - [X] status가 2xx이 아닐경우 Exception을 발생시킨다.
+- [X] API는 호출 시간은 application.properties에 정의가 되어서 그것 기반으로 호출이 되어야 한다.
+    - [X] 시작시에는 무조건 실행이 되어야 한다.
