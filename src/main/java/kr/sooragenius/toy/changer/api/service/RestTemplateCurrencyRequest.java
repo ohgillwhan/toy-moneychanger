@@ -1,6 +1,6 @@
 package kr.sooragenius.toy.changer.api.service;
 
-import kr.sooragenius.toy.changer.exception.APIFailureException;
+import kr.sooragenius.toy.changer.api.exception.APIFailureException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpMethod;
