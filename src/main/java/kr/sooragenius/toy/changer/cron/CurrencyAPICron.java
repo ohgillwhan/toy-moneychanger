@@ -1,6 +1,6 @@
 package kr.sooragenius.toy.changer.cron;
 
-import kr.sooragenius.toy.changer.service.CurrencyAPIService;
+import kr.sooragenius.toy.changer.service.CurrencyAPICaller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Slf4j
 public class CurrencyAPICron implements ApplicationRunner {
-    private final CurrencyAPIService currencyAPIService;
+    private final CurrencyAPICaller currencyAPICaller;
 
 
     @Scheduled(cron = "${currency.api.cron.expression}")
     private void schedule() {
         log.info("Start Schedule");
-        currencyAPIService.getCurrenciesListFromAPI()
+        currencyAPICaller.call()
                 .forEach(System.out::println);
     }
 

@@ -1,6 +1,5 @@
 package kr.sooragenius.toy.changer.service;
 
-import com.google.gson.Gson;
 import kr.sooragenius.toy.changer.domain.Currency;
 import kr.sooragenius.toy.changer.enums.CurrencyType;
 import kr.sooragenius.toy.changer.exception.APIFailureException;
@@ -12,7 +11,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-public class CurrencyAPIServiceTest {
+public class CurrencyAPICallerTest {
     private final static String SUCCESS_JSON = "{\"success\":true,\"terms\":\"https://currencylayer.com/terms\",\"privacy\":\"https://currencylayer.com/privacy\",\"timestamp\":1614651127,\"source\":\"USD\",\"quotes\":{\"USDAED\":3.673198,\"USDAFN\":78.432676}}";
     private final static String NOT_SUCCESS_JSON = "{\"success\":true,\"terms\":\"https://currencylayer.com/terms\",\"privacy\":\"https://currencylayer.com/privacy\",\"timestamp\":1614651127,\"source\":\"USD\"}";
 
@@ -22,9 +21,9 @@ public class CurrencyAPIServiceTest {
     @Test
     void 정상적인_json이면은_정상적인_CurrencyResponse가_리턴되어야_한다() {
         // given
-        CurrencyAPIService currencyAPIService = new CurrencyAPIService(() -> CurrencyAPIServiceTest.SUCCESS_JSON);
+        CurrencyAPICaller currencyAPICaller = new CurrencyAPICaller(() -> CurrencyAPICallerTest.SUCCESS_JSON);
         // when
-        List<Currency> currencies = currencyAPIService.getCurrenciesListFromAPI();
+        List<Currency> currencies = currencyAPICaller.call();
 
         // then
         Currency aed = currencies.get(0);
@@ -37,10 +36,10 @@ public class CurrencyAPIServiceTest {
     @DisplayName("성공하지 못한 Json이면은 Exception이 발생해야 한다.")
     @Test
     void 성공하지_못한_Json이면은_Exception이_발생해야_한다() {
-        CurrencyAPIService currencyAPIService = new CurrencyAPIService(() -> CurrencyAPIServiceTest.NOT_SUCCESS_JSON);
+        CurrencyAPICaller currencyAPICaller = new CurrencyAPICaller(() -> CurrencyAPICallerTest.NOT_SUCCESS_JSON);
 
         assertThatExceptionOfType(APIFailureException.class)
-                .isThrownBy(() -> currencyAPIService.getCurrenciesListFromAPI());
+                .isThrownBy(() -> currencyAPICaller.call());
     }
 
 

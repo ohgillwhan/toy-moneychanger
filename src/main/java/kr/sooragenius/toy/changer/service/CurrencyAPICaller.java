@@ -13,11 +13,11 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Component
-public class CurrencyAPIService {
+public class CurrencyAPICaller {
     private final CurrencyRequest currencyRequest;
     private final Gson gson = new Gson();
 
-    public List<Currency> getCurrenciesListFromAPI() {
+    public List<Currency> call() {
         String payload = currencyRequest.request();
 
         CurrencyAPIDTO.Response response= gson.fromJson(payload, CurrencyAPIDTO.Response.class);
