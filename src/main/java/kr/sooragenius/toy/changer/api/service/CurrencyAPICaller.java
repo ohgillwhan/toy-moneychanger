@@ -1,10 +1,9 @@
-package kr.sooragenius.toy.changer.service;
+package kr.sooragenius.toy.changer.api.service;
 
 import com.google.gson.Gson;
 import kr.sooragenius.toy.changer.domain.Currency;
-import kr.sooragenius.toy.changer.dto.CurrencyAPIDTO;
+import kr.sooragenius.toy.changer.api.dto.CurrencyAPIDTO;
 import kr.sooragenius.toy.changer.exception.APIFailureException;
-import kr.sooragenius.toy.changer.request.CurrencyRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

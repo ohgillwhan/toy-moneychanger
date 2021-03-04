@@ -1,4 +1,4 @@
-package kr.sooragenius.toy.changer.dto;
+package kr.sooragenius.toy.changer.api.dto;
 
 import lombok.Data;
 

@@ -1,5 +1,7 @@
-package kr.sooragenius.toy.changer.request;
+package kr.sooragenius.toy.changer.api.request;
 
+import kr.sooragenius.toy.changer.api.service.CurrencyRequest;
+import kr.sooragenius.toy.changer.api.service.RestTemplateCurrencyRequest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package kr.sooragenius.toy.changer.service;
+package kr.sooragenius.toy.changer.api.service;
 
 import kr.sooragenius.toy.changer.domain.Currency;
 import kr.sooragenius.toy.changer.enums.CurrencyType;

@@ -1,4 +1,4 @@
-package kr.sooragenius.toy.changer.request;
+package kr.sooragenius.toy.changer.api.service;
 
 
 @FunctionalInterface

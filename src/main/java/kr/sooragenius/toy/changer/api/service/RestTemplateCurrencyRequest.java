@@ -1,4 +1,4 @@
-package kr.sooragenius.toy.changer.request;
+package kr.sooragenius.toy.changer.api.service;
 
 import kr.sooragenius.toy.changer.exception.APIFailureException;
 import org.springframework.beans.factory.annotation.Value;
