@@ -5,6 +5,8 @@ import kr.sooragenius.toy.changer.domain.Currency;
 import kr.sooragenius.toy.changer.api.dto.CurrencyAPIDTO;
 import kr.sooragenius.toy.changer.api.exception.APIFailureException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.retry.annotation.Backoff;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -16,6 +18,7 @@ public class CurrencyAPICaller {
     private final CurrencyRequest currencyRequest;
     private final Gson gson = new Gson();
 
+    @Retryable(value = Exception.class, maxAttemptsExpression = "${currency.api.retry.maxAttemptsExpression}", backoff = @Backoff(delayExpression = "${currency.api.retry.delayExpression}"))
     public List<Currency> call() {
         String payload = currencyRequest.request();
 
