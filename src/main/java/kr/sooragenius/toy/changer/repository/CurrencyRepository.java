@@ -1,4 +1,4 @@
-package kr.sooragenius.toy.changer.api.repository;
+package kr.sooragenius.toy.changer.repository;
 
 import kr.sooragenius.toy.changer.domain.Currency;
 import kr.sooragenius.toy.changer.domain.CurrencyKey;

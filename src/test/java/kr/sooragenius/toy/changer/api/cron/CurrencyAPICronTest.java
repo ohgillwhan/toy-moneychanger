@@ -2,6 +2,7 @@ package kr.sooragenius.toy.changer.api.cron;
 
 import kr.sooragenius.toy.changer.api.config.TestScheduleConfiguration;
 import kr.sooragenius.toy.changer.api.service.CurrencyAPICaller;
+import kr.sooragenius.toy.changer.service.CurrencyService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.internal.verification.VerificationModeFactory;
@@ -34,14 +35,24 @@ import static org.mockito.Mockito.*;
 class CurrencyAPICronTest {
     @MockBean
     private CurrencyAPICaller currencyAPICaller;
+    @MockBean
+    private CurrencyService currencyService;
 
     @Test
     void 시작시_한번_5초뒤_한번_호출이_되어_총_2번_되어야_한다() throws InterruptedException {
-        verify(currencyAPICaller, atMostOnce())
+        Thread.sleep(2000);
+        verify(currencyAPICaller, only())
                 .call();
         Thread.sleep(5000);
         verify(currencyAPICaller, atLeast(2))
                 .call();
+    }
+
+    @Test
+    void 크론이_돌면_데이터도_가져오고_저장도_해야한다() throws  Exception {
+        Thread.sleep(2000);
+        verify(currencyAPICaller, only()).call();
+        verify(currencyService, atLeastOnce()).saveAll(any());
     }
 
 }

@@ -2,10 +2,10 @@ package kr.sooragenius.toy.changer.api.repository;
 
 import kr.sooragenius.toy.changer.api.service.CurrencyAPICaller;
 import kr.sooragenius.toy.changer.api.service.CurrencyAPICallerTest;
-import kr.sooragenius.toy.changer.api.service.CurrencyRequest;
 import kr.sooragenius.toy.changer.domain.Currency;
 import kr.sooragenius.toy.changer.domain.CurrencyKey;
 import kr.sooragenius.toy.changer.enums.CurrencyType;
+import kr.sooragenius.toy.changer.repository.CurrencyRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
