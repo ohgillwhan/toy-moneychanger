@@ -44,8 +44,8 @@ public class CurrencyAPICallerTest {
 
 
     private void assertCurrency(Currency currency, CurrencyType exceptFrom, CurrencyType exceptTo, double exceptRate) {
-        assertThat(currency.getFrom()).isEqualTo(exceptFrom);
-        assertThat(currency.getTo()).isEqualTo(exceptTo);
+        assertThat(currency.getSource()).isEqualTo(exceptFrom);
+        assertThat(currency.getDestination()).isEqualTo(exceptTo);
         assertThat(currency.getRate()).isEqualTo(exceptRate);
     }
 }
