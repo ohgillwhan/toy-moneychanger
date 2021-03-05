@@ -28,11 +28,11 @@ public class CurrencyController {
         CurrencyKey currencyKey = new CurrencyKey(exchange.getSource(), exchange.getDestination());
         Currency currency = currencyService.findById(currencyKey);
 
-        double recivableAmount = currency.calcReceivableAmount(exchange.getAmount());
+        double receivableAmount = currency.calcReceivableAmount(exchange.getAmount());
 
         CurrencyResponseDTO.Exchange exchangeResult = modelMapper.map(exchange, CurrencyResponseDTO.Exchange.class);
         modelMapper.map(currency, exchangeResult);
-        exchangeResult.setReceivableAmount(recivableAmount);
+        exchangeResult.setReceivableAmount(receivableAmount);
 
         modelMap.addAttribute("exchangeResult", exchangeResult);
 
