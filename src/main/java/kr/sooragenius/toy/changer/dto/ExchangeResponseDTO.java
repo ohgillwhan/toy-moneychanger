@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.text.DecimalFormat;
 
-public class CurrencyResponseDTO {
+public class ExchangeResponseDTO {
     @Data
     public static class ExchangeRate {
         private CurrencyType source;

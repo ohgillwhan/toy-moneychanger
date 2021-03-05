@@ -1,8 +1,7 @@
 package kr.sooragenius.toy.changer.controller;
 
 import kr.sooragenius.toy.changer.domain.Currency;
-import kr.sooragenius.toy.changer.domain.CurrencyKey;
-import kr.sooragenius.toy.changer.dto.CurrencyResponseDTO;
+import kr.sooragenius.toy.changer.dto.ExchangeResponseDTO;
 import kr.sooragenius.toy.changer.enums.CurrencyType;
 import kr.sooragenius.toy.changer.service.CurrencyService;
 import org.junit.jupiter.api.Test;
@@ -12,16 +11,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJson;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
-import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.json.GsonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.boot.test.json.ObjectContent;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -29,11 +25,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(CurrencyAPIController.class)
+@WebMvcTest(ExchangeAPIController.class)
 @ExtendWith(MockitoExtension.class)
 @AutoConfigureJson
 @AutoConfigureJsonTesters
-class CurrencyAPIControllerTest {
+class ExchangeAPIControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
@@ -41,7 +37,7 @@ class CurrencyAPIControllerTest {
     private CurrencyService currencyService;
 
     @Autowired
-    GsonTester<CurrencyResponseDTO.ExchangeRate> gsonTester;
+    GsonTester<ExchangeResponseDTO.ExchangeRate> gsonTester;
     @Test
     void currencyRate() throws Exception {
         // given
@@ -59,7 +55,7 @@ class CurrencyAPIControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andReturn();
         // then
-        ObjectContent<CurrencyResponseDTO.ExchangeRate> parse = gsonTester.parse(mvcResult.getResponse().getContentAsString());
+        ObjectContent<ExchangeResponseDTO.ExchangeRate> parse = gsonTester.parse(mvcResult.getResponse().getContentAsString());
 
         assertThat(parse)
                 .extracting("source").isEqualTo(CurrencyType.USD);

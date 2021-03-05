@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-public class CurrencyRequestDTO {
+public class ExchangeRequestDTO {
     @Data
     public static class ExchangeRate {
         private CurrencyType source = CurrencyType.USD;
