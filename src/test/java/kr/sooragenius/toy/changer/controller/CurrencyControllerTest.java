@@ -26,6 +26,7 @@ import org.springframework.ui.ModelMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -47,17 +48,17 @@ class CurrencyControllerTest {
     void exchange() throws Exception {
         // given
         CurrencyRequestDTO.Exchange exchange = new CurrencyRequestDTO.Exchange(CurrencyType.USD, CurrencyType.KRW, 1000);
-        CurrencyKey currencyKey = new CurrencyKey(CurrencyType.USD, CurrencyType.KRW);
         Currency currency = new Currency("USD", "USDKRW", 1200);
 
-        given(currencyService.findById(currencyKey))
+        given(currencyService.findById(any()))
                 .willReturn(currency);
 
         // when
         MvcResult mvcResult = mockMvc.perform(
                 post("/exchange")
-                        .content(gson.toJson(exchange))
-                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("source", exchange.getSource().name())
+                        .param("destination", exchange.getDestination().name())
+                        .param("amount", String.valueOf(exchange.getAmount()))
         )
                 .andExpect(status().isOk())
                 .andReturn();
