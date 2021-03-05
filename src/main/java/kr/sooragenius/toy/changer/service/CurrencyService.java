@@ -14,7 +14,8 @@ public class CurrencyService {
     private final CurrencyRepository currencyRepository;
 
     @Transactional
-    public List<Currency> saveAll(List<Currency> list) {
+    public List<Currency> deleteAllAndSaveALl(List<Currency> list) {
+        currencyRepository.deleteAll();
         return currencyRepository.saveAll(list);
     }
 }

@@ -24,7 +24,7 @@ public class CurrencyAPICron implements ApplicationRunner {
     private void schedule() {
         log.info("Start Schedule");
         List<Currency> call = currencyAPICaller.call();
-        currencyService.saveAll(call);
+        currencyService.deleteAllAndSaveALl(call);
     }
 
     @Override
