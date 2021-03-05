@@ -20,4 +20,4 @@
     - [X] 송금액을 입력후 돈을 건네면은 계산되어 나와야 한다. 
 - [ ] 송금액이 숫자가 아니거나 0~10000의 값이 아니거나 공백일 경우에는 빨간글씨로 표시가 필요로 하다.
 - [ ] index.html exchange.html 에서 javascript을 따로 빼야한다.
-- [ ] properties 정리하기 
+- [X] properties 정리하기 
