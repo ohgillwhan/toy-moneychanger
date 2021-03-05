@@ -19,7 +19,7 @@ public class ExchangeAPIController {
     private final ModelMapper modelMapper = new ModelMapper();
 
 
-    @GetMapping("/currency-rate")
+    @GetMapping("/exchange-rate")
     public ResponseEntity<ExchangeResponseDTO.ExchangeRate> currencyRate(ExchangeRequestDTO.ExchangeRate exchangeRate) {
         CurrencyKey currencyKey = new CurrencyKey(exchangeRate.getSource(), exchangeRate.getDestination());
         Currency currency = currencyService.findById(currencyKey);

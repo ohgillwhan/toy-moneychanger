@@ -47,7 +47,7 @@ class ExchangeAPIControllerTest {
 
         // when
         MvcResult mvcResult = mockMvc.perform(
-                get("/currency-rate")
+                get("/exchange-rate")
                         .queryParam("source", "USD")
                         .queryParam("destination", "KRW")
         )

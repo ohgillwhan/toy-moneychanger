@@ -40,7 +40,7 @@
         function updateRate() {
             var destination = $("[name=destination]").val();
             $.ajax({
-                url: "/currency-rate?source=USD&destination=" + destination,
+                url: "/exchange-rate?source=USD&destination=" + destination,
                 success : function(data) {
                     $("#rate").text(data.ratePretty);
                 }
