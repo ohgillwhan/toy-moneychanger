@@ -29,7 +29,7 @@ public class Currency {
         this.rate = rate;
     }
 
-    public double calcRecivableAmount(int amount) {
+    public double calcReceivableAmount(int amount) {
         return rate * amount;
     }
 }
