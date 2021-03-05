@@ -36,6 +36,6 @@ public class CurrencyController {
 
         modelMap.addAttribute("exchangeResult", exchangeResult);
 
-        return "index";
+        return "exchange";
     }
 }

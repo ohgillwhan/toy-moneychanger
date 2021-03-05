@@ -28,7 +28,7 @@
         <div>
             송금액: <input type="text" name="amount" th:value="${exchangeResult.getAmount()}">
         </div>
-        <div th:if="${exchangeResult.getReceivableAmount() > 0}">
+        <div>
             수취금액은 [[ ${exchangeResult.getReceivableAmountPretty()} ]] [[ ${exchangeResult.getDestination().name()} ]] 입니다.
         </div>
         <input type="submit" value="돈 건네기">
