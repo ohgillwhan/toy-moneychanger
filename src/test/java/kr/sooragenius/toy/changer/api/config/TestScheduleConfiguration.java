@@ -7,6 +7,5 @@ import org.springframework.stereotype.Component;
 
 @Configuration
 @EnableScheduling
-@ComponentScan("kr.sooragenius.toy.changer.api.cron")
 public class TestScheduleConfiguration {
 }
