@@ -28,4 +28,8 @@ public class Currency {
         this.destination = CurrencyType.valueOf(sourceAndDestination.substring(source.length()));
         this.rate = rate;
     }
+
+    public double calcRecivableAmount(int amount) {
+        return rate * amount;
+    }
 }
