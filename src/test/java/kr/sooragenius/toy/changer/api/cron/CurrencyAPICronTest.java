@@ -36,10 +36,10 @@ class CurrencyAPICronTest {
     private CurrencyAPICaller currencyAPICaller;
 
     @Test
-    void 시작시_한번_3초뒤_한번_호출이_되어_총_2번_되어야_한다() throws InterruptedException {
+    void 시작시_한번_5초뒤_한번_호출이_되어_총_2번_되어야_한다() throws InterruptedException {
         verify(currencyAPICaller, atMostOnce())
                 .call();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         verify(currencyAPICaller, atLeast(2))
                 .call();
     }
