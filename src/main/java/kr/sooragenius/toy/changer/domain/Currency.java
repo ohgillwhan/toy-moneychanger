@@ -21,11 +21,11 @@ public class Currency {
 
     private double rate;
 
-    public Currency(String source, String fromTo, double rate) {
+    public Currency(String source, String sourceAndDestination, double rate) {
         Assert.notNull(source, "source는 notNull 여야 합니다.");
-        Assert.notNull(fromTo, "fromTo는 notNull 여야 합니다.");
+        Assert.notNull(sourceAndDestination, "sourceAndDestination는 notNull 여야 합니다.");
         this.source = CurrencyType.valueOf(source);
-        this.destination = CurrencyType.valueOf(fromTo.substring(source.length()));
+        this.destination = CurrencyType.valueOf(sourceAndDestination.substring(source.length()));
         this.rate = rate;
     }
 }

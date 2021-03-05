@@ -3,6 +3,9 @@ package kr.sooragenius.toy.changer.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.Arrays;
+import java.util.List;
+
 @AllArgsConstructor
 @Getter
 public enum CurrencyType {
@@ -177,4 +180,8 @@ public enum CurrencyType {
     ZWL("Zimbabwean Dollar");
 
     private String title;
+
+    public static List<CurrencyType> getExchangeableCurrencyType() {
+        return Arrays.asList(KRW, JPY, PHP);
+    }
 }
