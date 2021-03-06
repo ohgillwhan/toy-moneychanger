@@ -9,7 +9,11 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor
@@ -18,13 +22,18 @@ public class ExchangeController {
 
     private final ModelMapper modelMapper = new ModelMapper();
     @RequestMapping(value = {"/", ""})
-    public String index(@ModelAttribute("exchangeResult") ExchangeResponseDTO.Exchange exchangeResult) {
+    public String index(@ModelAttribute("request") ExchangeRequestDTO.Exchange exchangeResult) {
 
         return "index";
     }
 
     @PostMapping("/exchange")
-    public String exchange(@ModelAttribute ExchangeRequestDTO.Exchange exchange, ModelMap modelMap) {
+    public String exchange(@Valid @ModelAttribute("request") ExchangeRequestDTO.Exchange exchange, BindingResult bindingResult, ModelMap modelMap) {
+        if(bindingResult.hasErrors()) {
+            modelMap.addAttribute("errors", bindingResult.getAllErrors());
+            return index(exchange);
+        }
+
         CurrencyKey currencyKey = new CurrencyKey(exchange.getSource(), exchange.getDestination());
         Currency currency = currencyService.findById(currencyKey);
 

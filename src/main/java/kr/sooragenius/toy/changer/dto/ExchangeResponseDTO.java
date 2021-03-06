@@ -32,5 +32,10 @@ public class ExchangeResponseDTO {
             DecimalFormat form = new DecimalFormat("#,##0.##");
             return form.format(receivableAmount);
         }
+
+        public String getRatePretty() {
+            DecimalFormat form = new DecimalFormat("#,##0.##");
+            return form.format(rate);
+        }
     }
 }

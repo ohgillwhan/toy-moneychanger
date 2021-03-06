@@ -16,22 +16,24 @@
                 <option th:each="dest: ${T(kr.sooragenius.toy.changer.enums.CurrencyType).getExchangeableCurrencyType()}"
                         th:value="${dest.name}"
                         th:text="${dest.getTitle()}"
-                        th:selected="${dest == exchangeResult.getDestination()}"
+                        th:selected="${dest == request.getDestination()}"
                 >
                 </option>
             </select>
 
         </div>
         <div>
-            환율: <span id="rate" th:text="${exchangeResult.getRate()}"></span>
+            환율:<span id="rate"></span>
         </div>
         <div>
-            송금액: <input type="text" name="amount" th:value="${exchangeResult.getAmount()}">
-        </div>
-        <div th:if="${exchangeResult.getReceivableAmount() > 0}">
-            수취금액은 [[ ${exchangeResult.getReceivableAmountPretty()} ]] [[ ${exchangeResult.getDestination().name()} ]] 입니다.
+            송금액: <input type="text" name="amount" th:value="${request.getAmount()}">
         </div>
         <input type="submit" value="돈 건네기">
+        <th:block th:if="${errors != null && !errors.isEmpty()}">
+            <div th:each="error : ${errors}" style="color:red" th:text="${error.getDefaultMessage()}">
+
+            </div>
+        </th:block>
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
