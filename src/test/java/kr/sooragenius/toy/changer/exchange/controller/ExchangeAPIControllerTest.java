@@ -4,6 +4,7 @@ import kr.sooragenius.toy.changer.currency.domain.Currency;
 import kr.sooragenius.toy.changer.exchange.dto.ExchangeResponseDTO;
 import kr.sooragenius.toy.changer.currency.enums.CurrencyType;
 import kr.sooragenius.toy.changer.currency.service.CurrencyService;
+import kr.sooragenius.toy.changer.exchange.vo.PrettyDouble;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.BDDMockito;
@@ -62,7 +63,7 @@ class ExchangeAPIControllerTest {
         assertThat(parse)
                 .extracting("destination").isEqualTo(CurrencyType.KRW);
         assertThat(parse)
-                .extracting("rate").isEqualTo((double)1500);
+                .extracting("rate").isEqualTo(new PrettyDouble(1500));
 
     }
 }

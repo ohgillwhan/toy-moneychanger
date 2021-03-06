@@ -6,6 +6,7 @@ import kr.sooragenius.toy.changer.exchange.dto.ExchangeRequestDTO;
 import kr.sooragenius.toy.changer.exchange.dto.ExchangeResponseDTO;
 import kr.sooragenius.toy.changer.currency.enums.CurrencyType;
 import kr.sooragenius.toy.changer.currency.service.CurrencyService;
+import kr.sooragenius.toy.changer.exchange.vo.PrettyDouble;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -97,6 +98,7 @@ class ExchangeControllerTest {
 
         // then
         ModelMap modelMap = mvcResult.getModelAndView().getModelMap();
+
         JsonContent<ExchangeResponseDTO.Exchange> parse = gsonTester.write((ExchangeResponseDTO.Exchange) modelMap.get("exchangeResult"));
 
         assertThat(parse)
@@ -106,6 +108,6 @@ class ExchangeControllerTest {
         assertThat(parse)
                 .extractingJsonPathNumberValue("amount").isEqualTo(exchange.getAmount());
         assertThat(parse)
-                .extractingJsonPathNumberValue("receivableAmount").isEqualTo(exchange.getAmount() * currency.getRate());
+                .extractingJsonPathNumberValue("receivableAmount.value").isEqualTo(exchange.getAmount() * currency.getRate());
     }
 }
