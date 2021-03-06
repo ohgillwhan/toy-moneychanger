@@ -23,13 +23,13 @@
 
         </div>
         <div>
-            환율: <span id="rate" th:text="${exchangeResult.getRatePretty()}"></span>
+            환율: <span id="rate" th:text="${exchangeResult.getRate()}"></span>
         </div>
         <div>
             송금액: <input type="text" name="amount" th:value="${request.getAmount()}">
         </div>
         <div>
-            수취금액은 [[ ${exchangeResult.getReceivableAmountPretty()} ]] [[ ${exchangeResult.getDestination().name()} ]] 입니다.
+            수취금액은 [[ ${exchangeResult.getReceivableAmount()} ]] [[ ${exchangeResult.getDestination().name()} ]] 입니다.
         </div>
         <input type="submit" value="돈 건네기">
     </form>

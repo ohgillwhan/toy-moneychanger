@@ -1,6 +1,7 @@
 package kr.sooragenius.toy.changer.dto;
 
 import kr.sooragenius.toy.changer.enums.CurrencyType;
+import kr.sooragenius.toy.changer.vo.PrettyDouble;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,17 +26,15 @@ public class ExchangeResponseDTO {
         private CurrencyType source;
         private CurrencyType destination;
         private int amount;
-        private double rate;
-        private double receivableAmount;
+        private PrettyDouble rate;
+        private PrettyDouble receivableAmount;
 
-        public String getReceivableAmountPretty() {
-            DecimalFormat form = new DecimalFormat("#,##0.##");
-            return form.format(receivableAmount);
+        public void setRate(double value) {
+            this.rate = new PrettyDouble(value);
         }
 
-        public String getRatePretty() {
-            DecimalFormat form = new DecimalFormat("#,##0.##");
-            return form.format(rate);
+        public void setReceivableAmount(double receivableAmount) {
+            this.receivableAmount = new PrettyDouble(receivableAmount);
         }
     }
 }

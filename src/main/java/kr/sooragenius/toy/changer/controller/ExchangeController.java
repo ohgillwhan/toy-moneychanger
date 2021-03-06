@@ -7,6 +7,7 @@ import kr.sooragenius.toy.changer.dto.ExchangeResponseDTO;
 import kr.sooragenius.toy.changer.service.CurrencyService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeMap;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -38,6 +39,7 @@ public class ExchangeController {
         Currency currency = currencyService.findById(currencyKey);
 
         double receivableAmount = currency.calcReceivableAmount(exchange.getAmount());
+
 
         ExchangeResponseDTO.Exchange exchangeResult = modelMapper.map(exchange, ExchangeResponseDTO.Exchange.class);
         modelMapper.map(currency, exchangeResult);
