@@ -36,18 +36,9 @@
         </th:block>
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/exchange.js"></script>
     <script type="text/javascript">
         updateRate();
-
-        function updateRate() {
-            var destination = $("[name=destination]").val();
-            $.ajax({
-                url: "/exchange-rate?source=USD&destination=" + destination,
-                success : function(data) {
-                    $("#rate").text(data.ratePretty);
-                }
-            })
-        }
     </script>
 </body>
 </html>

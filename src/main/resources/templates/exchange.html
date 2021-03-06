@@ -34,16 +34,6 @@
         <input type="submit" value="돈 건네기">
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript">
-        function updateRate() {
-            var destination = $("[name=destination]").val();
-            $.ajax({
-                url: "/exchange-rate?source=USD&destination=" + destination,
-                success : function(data) {
-                    $("#rate").text(data.ratePretty);
-                }
-            })
-        }
-    </script>
+    <script src="js/exchange.js"></script>
 </body>
 </html>
