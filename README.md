@@ -22,4 +22,4 @@
     - [X] 프론트 단에서도 validation이 필요하다
 - [X] index.html exchange.html 에서 javascript을 따로 빼야한다.
 - [X] properties 정리하기 
-- [ ] DTO안에서 rate, receivableAmount의 값이 객체면 어떨까? 라는 고민을 해보자 ( pretty하게 뽑아내려고 )
+- [X] DTO안에서 rate, receivableAmount의 값이 객체면 어떨까? 라는 고민을 해보자 ( pretty하게 뽑아내려고 )
