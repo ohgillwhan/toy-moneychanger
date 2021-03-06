@@ -1,4 +1,4 @@
-package kr.sooragenius.toy.changer.vo;
+package kr.sooragenius.toy.changer.exchange.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,7 @@
 package kr.sooragenius.toy.changer.api.service;
 
 import com.google.gson.Gson;
-import kr.sooragenius.toy.changer.domain.Currency;
+import kr.sooragenius.toy.changer.currency.domain.Currency;
 import kr.sooragenius.toy.changer.api.dto.CurrencyAPIDTO;
 import kr.sooragenius.toy.changer.api.exception.APIFailureException;
 import lombok.RequiredArgsConstructor;

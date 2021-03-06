@@ -1,17 +1,15 @@
-package kr.sooragenius.toy.changer.controller;
+package kr.sooragenius.toy.changer.exchange.controller;
 
-import kr.sooragenius.toy.changer.domain.Currency;
-import kr.sooragenius.toy.changer.domain.CurrencyKey;
-import kr.sooragenius.toy.changer.dto.ExchangeRequestDTO;
-import kr.sooragenius.toy.changer.dto.ExchangeResponseDTO;
-import kr.sooragenius.toy.changer.service.CurrencyService;
+import kr.sooragenius.toy.changer.currency.domain.Currency;
+import kr.sooragenius.toy.changer.currency.domain.CurrencyKey;
+import kr.sooragenius.toy.changer.exchange.dto.ExchangeRequestDTO;
+import kr.sooragenius.toy.changer.exchange.dto.ExchangeResponseDTO;
+import kr.sooragenius.toy.changer.currency.service.CurrencyService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeMap;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

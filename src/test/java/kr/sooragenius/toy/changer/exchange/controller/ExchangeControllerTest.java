@@ -1,12 +1,11 @@
-package kr.sooragenius.toy.changer.controller;
+package kr.sooragenius.toy.changer.exchange.controller;
 
 import com.google.gson.Gson;
-import kr.sooragenius.toy.changer.domain.Currency;
-import kr.sooragenius.toy.changer.dto.ExchangeRequestDTO;
-import kr.sooragenius.toy.changer.dto.ExchangeResponseDTO;
-import kr.sooragenius.toy.changer.enums.CurrencyType;
-import kr.sooragenius.toy.changer.service.CurrencyService;
-import org.junit.jupiter.api.BeforeEach;
+import kr.sooragenius.toy.changer.currency.domain.Currency;
+import kr.sooragenius.toy.changer.exchange.dto.ExchangeRequestDTO;
+import kr.sooragenius.toy.changer.exchange.dto.ExchangeResponseDTO;
+import kr.sooragenius.toy.changer.currency.enums.CurrencyType;
+import kr.sooragenius.toy.changer.currency.service.CurrencyService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,11 +18,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.json.GsonTester;
 import org.springframework.boot.test.json.JsonContent;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.ObjectError;
 

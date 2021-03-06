@@ -1,6 +1,6 @@
-package kr.sooragenius.toy.changer.dto;
+package kr.sooragenius.toy.changer.exchange.dto;
 
-import kr.sooragenius.toy.changer.enums.CurrencyType;
+import kr.sooragenius.toy.changer.currency.enums.CurrencyType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

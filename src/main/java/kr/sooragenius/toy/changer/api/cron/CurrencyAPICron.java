@@ -1,8 +1,8 @@
 package kr.sooragenius.toy.changer.api.cron;
 
 import kr.sooragenius.toy.changer.api.service.CurrencyAPICaller;
-import kr.sooragenius.toy.changer.domain.Currency;
-import kr.sooragenius.toy.changer.service.CurrencyService;
+import kr.sooragenius.toy.changer.currency.domain.Currency;
+import kr.sooragenius.toy.changer.currency.service.CurrencyService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;

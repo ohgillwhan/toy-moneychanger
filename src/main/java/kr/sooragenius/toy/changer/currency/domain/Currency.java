@@ -1,6 +1,6 @@
-package kr.sooragenius.toy.changer.domain;
+package kr.sooragenius.toy.changer.currency.domain;
 
-import kr.sooragenius.toy.changer.enums.CurrencyType;
+import kr.sooragenius.toy.changer.currency.enums.CurrencyType;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

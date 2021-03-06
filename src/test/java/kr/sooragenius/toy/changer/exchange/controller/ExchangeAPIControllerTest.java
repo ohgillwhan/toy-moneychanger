@@ -1,9 +1,9 @@
-package kr.sooragenius.toy.changer.controller;
+package kr.sooragenius.toy.changer.exchange.controller;
 
-import kr.sooragenius.toy.changer.domain.Currency;
-import kr.sooragenius.toy.changer.dto.ExchangeResponseDTO;
-import kr.sooragenius.toy.changer.enums.CurrencyType;
-import kr.sooragenius.toy.changer.service.CurrencyService;
+import kr.sooragenius.toy.changer.currency.domain.Currency;
+import kr.sooragenius.toy.changer.exchange.dto.ExchangeResponseDTO;
+import kr.sooragenius.toy.changer.currency.enums.CurrencyType;
+import kr.sooragenius.toy.changer.currency.service.CurrencyService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.BDDMockito;

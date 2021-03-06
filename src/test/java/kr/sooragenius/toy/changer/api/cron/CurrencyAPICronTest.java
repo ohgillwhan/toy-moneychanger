@@ -2,7 +2,7 @@ package kr.sooragenius.toy.changer.api.cron;
 
 import kr.sooragenius.toy.changer.api.config.TestScheduleConfiguration;
 import kr.sooragenius.toy.changer.api.service.CurrencyAPICaller;
-import kr.sooragenius.toy.changer.service.CurrencyService;
+import kr.sooragenius.toy.changer.currency.service.CurrencyService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.mock.mockito.MockBean;

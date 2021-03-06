@@ -1,13 +1,11 @@
-package kr.sooragenius.toy.changer.domain;
+package kr.sooragenius.toy.changer.currency.domain;
 
-import kr.sooragenius.toy.changer.enums.CurrencyType;
+import kr.sooragenius.toy.changer.currency.enums.CurrencyType;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.IdClass;
 import java.io.Serializable;
 
 @Getter

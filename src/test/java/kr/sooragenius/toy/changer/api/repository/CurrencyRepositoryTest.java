@@ -1,11 +1,10 @@
 package kr.sooragenius.toy.changer.api.repository;
 
 import kr.sooragenius.toy.changer.api.service.CurrencyAPICaller;
-import kr.sooragenius.toy.changer.api.service.CurrencyAPICallerTest;
-import kr.sooragenius.toy.changer.domain.Currency;
-import kr.sooragenius.toy.changer.domain.CurrencyKey;
-import kr.sooragenius.toy.changer.enums.CurrencyType;
-import kr.sooragenius.toy.changer.repository.CurrencyRepository;
+import kr.sooragenius.toy.changer.currency.domain.Currency;
+import kr.sooragenius.toy.changer.currency.domain.CurrencyKey;
+import kr.sooragenius.toy.changer.currency.enums.CurrencyType;
+import kr.sooragenius.toy.changer.currency.repository.CurrencyRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -14,7 +13,6 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 class CurrencyRepositoryTest {

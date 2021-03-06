@@ -1,7 +1,7 @@
 package kr.sooragenius.toy.changer.api.service;
 
-import kr.sooragenius.toy.changer.domain.Currency;
-import kr.sooragenius.toy.changer.enums.CurrencyType;
+import kr.sooragenius.toy.changer.currency.domain.Currency;
+import kr.sooragenius.toy.changer.currency.enums.CurrencyType;
 import kr.sooragenius.toy.changer.api.exception.APIFailureException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

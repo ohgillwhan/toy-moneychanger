@@ -1,8 +1,8 @@
-package kr.sooragenius.toy.changer.service;
+package kr.sooragenius.toy.changer.currency.service;
 
-import kr.sooragenius.toy.changer.domain.Currency;
-import kr.sooragenius.toy.changer.domain.CurrencyKey;
-import kr.sooragenius.toy.changer.repository.CurrencyRepository;
+import kr.sooragenius.toy.changer.currency.domain.Currency;
+import kr.sooragenius.toy.changer.currency.domain.CurrencyKey;
+import kr.sooragenius.toy.changer.currency.repository.CurrencyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

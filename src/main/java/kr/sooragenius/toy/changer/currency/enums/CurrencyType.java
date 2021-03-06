@@ -1,4 +1,4 @@
-package kr.sooragenius.toy.changer.enums;
+package kr.sooragenius.toy.changer.currency.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
