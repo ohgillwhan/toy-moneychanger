@@ -13,11 +13,10 @@ public class ExchangeResponseDTO {
     public static class ExchangeRate {
         private CurrencyType source;
         private CurrencyType destination;
-        private double rate;
+        private PrettyDouble rate;
 
-        public String getRatePretty() {
-            DecimalFormat form = new DecimalFormat("#,##0.##");
-            return form.format(rate);
+        public void setRate(double rate) {
+            this.rate = new PrettyDouble(rate);
         }
     }
     @Data
