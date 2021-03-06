@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>환율 계산</h1>
-    <form th:action="@{/exchange}" method="post">
+    <form th:action="@{/exchange}" method="post" onsubmit="return validate(0, 10000)">
         <div>
             송금국가: 미국(USD)
         </div>

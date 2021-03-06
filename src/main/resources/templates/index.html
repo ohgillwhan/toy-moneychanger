@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>길환이의 환전소</title>
 </head>
-<body>
+<body onload="updateRate()">
     <h1>환율 계산</h1>
-    <form th:action="@{/exchange}" method="post">
+    <form th:action="@{/exchange}" method="post" onsubmit="return validate(0, 10000)">
         <div>
             송금국가: 미국(USD)
         </div>
@@ -31,14 +31,10 @@
         <input type="submit" value="돈 건네기">
         <th:block th:if="${errors != null && !errors.isEmpty()}">
             <div th:each="error : ${errors}" style="color:red" th:text="${error.getDefaultMessage()}">
-
             </div>
         </th:block>
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/exchange.js"></script>
-    <script type="text/javascript">
-        updateRate();
-    </script>
 </body>
 </html>

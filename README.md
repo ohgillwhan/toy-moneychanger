@@ -19,7 +19,7 @@
     - [X] 수취국가를 바꾸면은 환율을 바꿔줘야 한다.
     - [X] 송금액을 입력후 돈을 건네면은 계산되어 나와야 한다. 
 - [X] 송금액이 숫자가 아니거나 0~10000의 값이 아니거나 공백일 경우에는 빨간글씨로 표시가 필요로 하다.
-    - [ ] 프론트 단에서도 validation이 필요하다
+    - [X] 프론트 단에서도 validation이 필요하다
 - [X] index.html exchange.html 에서 javascript을 따로 빼야한다.
 - [X] properties 정리하기 
 - [ ] DTO안에서 rate, receivableAmount의 값이 객체면 어떨까? 라는 고민을 해보자 ( pretty하게 뽑아내려고 )
