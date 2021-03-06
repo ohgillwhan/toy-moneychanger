@@ -13,7 +13,7 @@
         <div>
             수취국가:
             <select name="destination" onchange="updateRate()">
-                <option th:each="dest: ${T(kr.sooragenius.toy.changer.enums.CurrencyType).getExchangeableCurrencyType()}"
+                <option th:each="dest: ${T(kr.sooragenius.toy.changer.currency.enums.CurrencyType).getExchangeableCurrencyType()}"
                         th:value="${dest.name}"
                         th:text="${dest.getTitle()}"
                         th:selected="${dest == request.getDestination()}"
