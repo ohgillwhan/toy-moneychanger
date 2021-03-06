@@ -9,9 +9,11 @@ import java.text.DecimalFormat;
 @AllArgsConstructor
 public class PrettyDouble {
     public double value;
-
     @Override
     public String toString() {
+        return getValuePretty();
+    }
+    public String getValuePretty() {
         DecimalFormat form = new DecimalFormat("#,##0.##");
         return form.format(value);
     }

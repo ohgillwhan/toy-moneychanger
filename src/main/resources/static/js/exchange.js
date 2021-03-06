@@ -3,7 +3,8 @@ function updateRate() {
     $.ajax({
         url: "/exchange-rate?source=USD&destination=" + destination,
         success : function(data) {
-            $("#rate").text(data.ratePretty);
+            console.log(data);
+            $("#rate").text(data.rate.valuePretty);
         }
     })
 }
