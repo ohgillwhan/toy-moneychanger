@@ -23,3 +23,10 @@
 - [X] index.html exchange.html 에서 javascript을 따로 빼야한다.
 - [X] properties 정리하기 
 - [X] DTO안에서 rate, receivableAmount의 값이 객체면 어떨까? 라는 고민을 해보자 ( pretty하게 뽑아내려고 )
+
+
+----
+# 꼭 읽어주세요~
+1. Active Profile을 dev로 돌리면은 Mock API Controller가 동작을 한다.
+2. startup에 있는 run.sh을 실행하면은 필요 한 mysql이 실행이 되고, 간단한 sql이 실행이 된다.
+3. 환경변수로 access_token을 관리함으로 환경변수에 access_token 입력이 필요하다 ( active_profile dev는 상관이 없음 )
